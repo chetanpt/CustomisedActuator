@@ -13,6 +13,11 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+# Chetan has added below extensions
+*.log
+*.obj
+*.stamp
+*
 
 # Windows shortcuts
 *.lnk

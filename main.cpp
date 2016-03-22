@@ -22,12 +22,7 @@ int main(int argc, int *argv[]){
 		5 - Result Prefix
 		*/
 		
-		/*
-		Temp commented. Uncomment when needed. - Chetan
-		customSo cSO;
-		//cSO.runFixedOptimizatio();
-		cSO.muscleForceAnalysis();
-		*/
+		
 		
 		/*
 		Current features in this solution
@@ -46,8 +41,20 @@ int main(int argc, int *argv[]){
 		7. Add copts for invalid commands
 		*/
 
-		trial test;
-		test.trialMethod();
+		
+		//trial test;
+		//test.trialMethod();
+		
+
+		/*
+		Temp commented. Uncomment when needed. - Chetan
+		*/
+		
+		customSo cSO;
+		//cSO.runFixedOptimizatio();
+		//cSO.viewModel();
+		cSO.muscleForceAnalysis();
+		
 		
 		getchar();
 		

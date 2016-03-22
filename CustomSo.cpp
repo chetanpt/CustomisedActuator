@@ -59,20 +59,6 @@ void customSo::runFixedOptimizatio(){
 	}
 }
 
-void customSo::muscleForceAnalysis(){
-	/*
-	In this I am reading force generation storage file and I want to plot graph 
-	for selected muscle provided in parameter to the method.
-	*/
-	string muscleForceFromSo = "D:\\Backup-Models\\WorkingWithStaticOptimization\\WorkingWithStaticOptimization\\ResultsSO_StrongActuators_Filter\\Scaled_Model_StaticOptimization_force.sto";
-	Storage genForces(muscleForceFromSo);
-	double forceData ;
-	for (size_t i = 0; i < genForces.getColumnLabels().getCapacity(); i++)
-	{
-		cout << genForces.getColumnLabels()[i] << " , ";
-	} 
-}
-
 void customSo::viewModel(){
 	/*
 	This method should visualize the mode provided in the parameter to it. 
@@ -90,4 +76,31 @@ void customSo::viewModel(){
 	// TBD: Need to know what is highestRuntime is in stage of the state.
 	osimModel.getMultibodySystem().realize(si, Stage::HighestRuntime);
 	osimModel.getVisualizer().show(si);
+	getchar();
+}
+
+void customSo::muscleForceAnalysis(){
+	/*
+	In this I am reading force generation storage file and I want to plot graph
+	for selected muscle provided in parameter to the method.
+	*/
+	string muscleForceFromSo = "D:\\Backup-Models\\WorkingWithStaticOptimization\\WorkingWithStaticOptimization\\ResultsSO_StrongActuators_Filter\\Scaled_Model_StaticOptimization_force.sto";
+	Storage genForces(muscleForceFromSo);
+	String muscleName = "rect_fem_r";
+	Array<double> forceTime;
+	Array<double> muscleForce;
+	cout << genForces.getColumnLabels() << "\n";
+	genForces.getTimeColumnWithStartTime(forceTime, genForces.getFirstTime());
+	genForces.getDataColumn(muscleName, muscleForce);
+	cout << muscleForce.getLast() << "\n";
+	cout << muscleForce.getCapacity() << "\n";
+	cout << muscleForce.getSize() << "\n";
+	
+	for (size_t i = 0; i < muscleForce.getSize(); i++)
+	{
+		cout << forceTime[i] << "\t";
+		cout << muscleForce[i] << "\n";
+
+	}
+	
 }
