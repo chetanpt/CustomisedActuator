@@ -52,7 +52,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">customOptimization.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">customOptimization</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Work\sourceCode\CustomisedActuator\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">customOptimization.dir\Release\</IntDir>
@@ -64,12 +64,12 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">customOptimization.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">customOptimization</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;C:\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -97,8 +97,8 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:x64 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation.lib;osimActuators.lib;osimCommon.lib;osimAnalyses.lib;osimTools.lib;OpenSim_SimTKcommon.lib;OpenSim_SimTKmath.lib;OpenSim_SimTKsimbody.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation.lib;osimActuators.lib;osimCommon.lib;osimAnalyses.lib;osimTools.lib;OpenSim_SimTKcommon.lib;OpenSim_SimTKmath.lib;OpenSim_SimTKsimbody.lib;opencv_world310d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);C:\opencv\build\x64\vc12\bin;C:\opencv\build\x64\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Work/sourceCode/CustomisedActuator/RelWithDebInfo/customOptimization.lib</ImportLibrary>
@@ -113,7 +113,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;C:\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -142,8 +142,8 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:x64 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation.lib;osimActuators.lib;osimCommon.lib;osimAnalyses.lib;osimTools.lib;OpenSim_SimTKcommon.lib;OpenSim_SimTKmath.lib;OpenSim_SimTKsimbody.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation.lib;osimActuators.lib;osimCommon.lib;osimAnalyses.lib;osimTools.lib;OpenSim_SimTKcommon.lib;OpenSim_SimTKmath.lib;OpenSim_SimTKsimbody.lib;opencv_world310d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);C:\opencv\build\x64\vc12\bin;C:\opencv\build\x64\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Work/sourceCode/CustomisedActuator/Release/customOptimization.lib</ImportLibrary>
@@ -158,7 +158,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>\Vendors;C:\OpenSim 3.3\sdk\include\SimTK\include;C:\OpenSim 3.3\sdk\include;C:\opencv\build\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -187,8 +187,8 @@
     </Midl>
     <Link>
       <AdditionalOptions> /machine:x64 /debug %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation_d.lib;osimActuators_d.lib;osimCommon_d.lib;osimAnalyses_d.lib;osimTools_d.lib;OpenSim_SimTKcommon_d.lib;OpenSim_SimTKmath_d.lib;OpenSim_SimTKsimbody_d.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;osimSimulation.lib;osimActuators.lib;osimCommon.lib;osimAnalyses.lib;osimTools.lib;OpenSim_SimTKcommon.lib;OpenSim_SimTKmath.lib;OpenSim_SimTKsimbody.lib;opencv_world310d.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/OpenSim 3.3/sdk/lib;C:/OpenSim 3.3/sdk/lib/$(Configuration);C:/OpenSim 3.3/lib;C:/OpenSim 3.3/lib/$(Configuration);C:/OpenSim 3.3/bin;C:/OpenSim 3.3/bin/$(Configuration);C:\opencv\build\x64\vc12\bin;C:\opencv\build\x64\vc12\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <ImportLibrary>D:/Work/sourceCode/CustomisedActuator/Debug/customOptimization.lib</ImportLibrary>
@@ -246,9 +246,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="graph.cpp" />
     <ClCompile Include="Trial.cpp" />
     <ClInclude Include="D:\Work\sourceCode\CustomisedActuator\CustomSo.h" />
     <ClCompile Include="D:\Work\sourceCode\CustomisedActuator\CustomSo.cpp" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Trial.h" />
   </ItemGroup>
   <ItemGroup>
