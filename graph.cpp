@@ -40,7 +40,7 @@ void graph::drawGraph(){
 	
 
 	char windowFrameName[] = "DrawingSample"; // Window Title 
-	Mat image = Mat::ones(w, w, CV_8UC3); // Create a image with black background
+	Mat image = Mat::zeros(w, w, CV_8UC3); // Create a image with black background
 	/*
 	Draw X-Y axis lines in the graph
 	*/
@@ -53,12 +53,16 @@ void graph::drawGraph(){
 	/*
 	Draw Graph now with sample data
 	*/
+	
 	double x[2] = {}, y[2] = {};
 	for (size_t i = 0; i < 7; i++)
 	{
+		//_sleep(1000);
 		line(image, Point((xDataPixelRatio * time[i] + 20), (250 -(dataPixelRatio * force[i])) ), Point(((xDataPixelRatio * time[i + 1]) + 20), (250 - dataPixelRatio * force[i + 1])), Scalar(100, 100, 100), 2, 8);
 		cout << "Start - " << (xDataPixelRatio * time[i] + 20) << " , " << (250 - (dataPixelRatio * force[i]))  << " | Finish - " << (xDataPixelRatio * time[i + 1]) + 20 << " , " << (250 - dataPixelRatio * force[i + 1] ) << "\n";
+		imshow(windowFrameName, image); // Show window with the drawing
+		
 	}
-	imshow(windowFrameName, image); // Show window with the drawing
+	
 	waitKey(0); // This is most important part in opencv. Never miss this otherwise graphic window will hang/crash always
 }

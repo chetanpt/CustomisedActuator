@@ -1,6 +1,9 @@
 #include <OpenSim/OpenSim.h>
 #include <ctime>    // for clock()
 #include "CustomSo.h"
+#include <amp_graphics.h>
+#include <conio.h>
+#include <math.h>
 
 using namespace OpenSim;
 using namespace SimTK;
@@ -89,18 +92,35 @@ void customSo::muscleForceAnalysis(){
 	String muscleName = "rect_fem_r";
 	Array<double> forceTime;
 	Array<double> muscleForce;
-	cout << genForces.getColumnLabels() << "\n";
+	//cout << genForces.getColumnLabels() << "\n";
 	genForces.getTimeColumnWithStartTime(forceTime, genForces.getFirstTime());
 	genForces.getDataColumn(muscleName, muscleForce);
-	cout << muscleForce.getLast() << "\n";
-	cout << muscleForce.getCapacity() << "\n";
-	cout << muscleForce.getSize() << "\n";
+	cout << genForces.getFirstTime() << "\n";
+	cout << genForces.getLastTime() << "\n";
 	
+	//cout << muscleForce.getLast() << "\n";
+	//cout << muscleForce.getCapacity() << "\n";
+	//cout << muscleForce.getSize() << "\n";
+
+	double temp = 0.0;
 	for (size_t i = 0; i < muscleForce.getSize(); i++)
 	{
-		cout << forceTime[i] << "\t";
-		cout << muscleForce[i] << "\n";
+		
+		if (muscleForce[i] > temp){
+			temp = muscleForce[i];
+		}
+		
 
 	}
+	cout << "max force for " << muscleName << " " << temp << "\n";
+	
 	
 }
+
+void customSo::insertMuscle()
+{
+	
+}
+/*
+Add get max of the Array<double>for max 
+*/
