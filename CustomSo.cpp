@@ -1,13 +1,6 @@
-#include <OpenSim/OpenSim.h>
-#include <ctime>    // for clock()
 #include "CustomSo.h"
-#include <amp_graphics.h>
-#include <conio.h>
-#include <math.h>
 
-using namespace OpenSim;
-using namespace SimTK;
-using namespace std;
+
 
 void customSo::runFixedOptimizatio(){
 	string motionData = "D:\\Backup-Models\\WorkingWithStaticOptimizationAutomation\\WorkingWithStaticOptimization\\subject01_walk_IK.mot";
@@ -101,26 +94,20 @@ void customSo::muscleForceAnalysis(){
 	//cout << muscleForce.getLast() << "\n";
 	//cout << muscleForce.getCapacity() << "\n";
 	//cout << muscleForce.getSize() << "\n";
+	//cout << "OUT: max force for " << muscleName << "  " << getMax(muscleForce, muscleName) << "\n";
+	cout << customSo::getMaxFromList(muscleForce, muscleName) << "\n";
 
+}
+
+double customSo::getMaxFromList(Array<double> dataList, String indentifier){
 	double temp = 0.0;
-	for (size_t i = 0; i < muscleForce.getSize(); i++)
+	for (size_t i = 0; i < dataList.getSize(); i++)
 	{
-		
-		if (muscleForce[i] > temp){
-			temp = muscleForce[i];
+		if (dataList[i] > temp){
+			temp = dataList[i];
 		}
-		
-
 	}
-	cout << "max force for " << muscleName << " " << temp << "\n";
-	
-	
+	cout << "IN - max force for " << indentifier << " " << temp << "\n";
+	return temp;
 }
 
-void customSo::insertMuscle()
-{
-	
-}
-/*
-Add get max of the Array<double>for max 
-*/
