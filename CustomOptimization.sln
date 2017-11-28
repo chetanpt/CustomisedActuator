@@ -22,6 +22,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EA240945-7A80-3CB8-B02D-C48AA0DD39DA}.Release|x64.ActiveCfg = Release|x64
+		{EA240945-7A80-3CB8-B02D-C48AA0DD39DA}.Release|x64.Build.0 = Release|x64
 		{EA240945-7A80-3CB8-B02D-C48AA0DD39DA}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{63989700-E003-3B24-93B7-97B132431193}.Release|x64.ActiveCfg = Release|x64
 		{63989700-E003-3B24-93B7-97B132431193}.Release|x64.Build.0 = Release|x64

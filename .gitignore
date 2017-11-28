@@ -17,6 +17,16 @@ $RECYCLE.BIN/
 *.log
 *.obj
 *.stamp
+*.sdf
+*.opensdf
+*.suo
+*.vcxproj.user
+*.dir
+CMakeFiles/*
+x64/*
+Release/*
+Debug/*
+RelWithDebInfo/*
 
 # Windows shortcuts
 *.lnk

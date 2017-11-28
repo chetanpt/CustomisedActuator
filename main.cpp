@@ -1,6 +1,8 @@
+#include "Simbody.h"
 #include <OpenSim\OpenSim.h>
 #include "CustomSo.h"
 #include "Trial.h"
+#include "graph.h"
 #include <fstream>
 
 
@@ -30,6 +32,7 @@ int main(int argc, int *argv[]){
 		2. Visualize the current model as is 
 
 		TBD
+
 		1. Organize the code
 		2. take out all the parameters outside of the code. 
 		3. make visualize a method 
@@ -53,9 +56,16 @@ int main(int argc, int *argv[]){
 		customSo cSO;
 		//cSO.runFixedOptimizatio();
 		//cSO.viewModel();
-		cSO.muscleForceAnalysis();
+		//cSO.addMuscle();
+		//cSO.muscleForceAnalysis(); // display static optimization result; muscle force output
+		cSO.testPGM();
+
+		// Following two lines are depricated now. 
+		//graph img;
+		//img.drawGraph();
 		
-		
+		// Define the system.
+
 		getchar();
 		
 	}
