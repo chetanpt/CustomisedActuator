@@ -22,6 +22,6 @@ public:
 	void addMuscle();
 	void insertMuscle();
 	void pendulum();
-	void testPGM();
+	int testPGM();
 };
 #endif

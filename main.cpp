@@ -55,10 +55,10 @@ int main(int argc, int *argv[]){
 		
 		customSo cSO;
 		//cSO.runFixedOptimizatio();
-		//cSO.viewModel();
+		cSO.viewModel();
 		//cSO.addMuscle();
 		//cSO.muscleForceAnalysis(); // display static optimization result; muscle force output
-		cSO.testPGM();
+		//cSO.testPGM();
 
 		// Following two lines are depricated now. 
 		//graph img;
